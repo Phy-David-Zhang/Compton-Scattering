@@ -1,0 +1,181 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5781,        173]
+NotebookOptionsPosition[      5041,        153]
+NotebookOutlinePosition[      5419,        169]
+CellTagsIndexPosition[      5376,        166]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Do", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"RawDataSetAngle", "[", "angle", "]"}], "=", 
+     RowBox[{"ReadList", "[", 
+      RowBox[{
+       RowBox[{"StringReplace", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+          "\"\</Raw Data/Angle-rp.Spe\>\""}], ",", " ", 
+         RowBox[{"\"\<rp\>\"", "\[Rule]", 
+          RowBox[{"ToString", "[", "angle", "]"}]}]}], "]"}], ",", " ", 
+       "String"}], "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"angle", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "0", ",", "5", ",", "15", ",", "30", ",", "35", ",", "45", ",", "55", 
+        ",", "60", ",", "70", ",", "85", ",", "95", ",", "105", ",", "115"}], 
+       "}"}]}], "}"}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.7314077227410603`*^9, 3.73140776916906*^9}, {
+   3.73140785704006*^9, 3.7314078987930603`*^9}, {3.7314079862010603`*^9, 
+   3.73140801696906*^9}, {3.7314081736280603`*^9, 3.7314082301780605`*^9}, {
+   3.7314083706730604`*^9, 3.7314083747130604`*^9}, {3.73140842961706*^9, 
+   3.7314084789370604`*^9}, 3.73140890250506*^9, {3.731596695410649*^9, 
+   3.7315966959987764`*^9}, {3.7315967707732973`*^9, 
+   3.7315967907559557`*^9}},ExpressionUUID->"2116326e-f3b9-43a4-b32a-\
+1d53b4de349a"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"PeakPosAng", "[", "0", "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"412", ",", "476"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PeakPosAng", "[", "5", "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"400", ",", "460"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PeakPosAng", "[", "15", "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"375", ",", "446"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PeakPosAng", "[", "30", "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"340", ",", "434"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PeakPosAng", "[", "35", "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"298", ",", "411"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PeakPosAng", "[", "45", "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"268", ",", "335"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PeakPosAng", "[", "55", "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"234", ",", "310"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PeakPosAng", "[", "60", "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"229", ",", "280"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PeakPosAng", "[", "70", "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"194", ",", "254"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PeakPosAng", "[", "85", "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"173", ",", "217"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PeakPosAng", "[", "95", "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"153", ",", "197"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PeakPosAng", "[", "105", "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"149", ",", "188"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PeakPosAng", "[", "115", "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"134", ",", "171"}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7314088509640603`*^9, 
+  3.73140912736106*^9}},ExpressionUUID->"84ce0173-a724-492a-b335-\
+04f071ea229c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Names", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.7314093163660603`*^9, 
+  3.73140933471206*^9}},ExpressionUUID->"83ea26f9-5e57-40a1-96e4-\
+cc6ee9f3f92c"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", 
+   RowBox[{"\<\"angle\"\>", ",", "\<\"PeakPosAng\"\>", 
+    ",", "\<\"RawDataSetAngle\"\>", ",", "\<\"$UseTextSearchQ\"\>"}], "}"}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{3.7314093357250605`*^9, 
+  3.731596922481656*^9},ExpressionUUID->"dd27cd40-576b-4fb9-8977-\
+9d1215946673"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DumpSave", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\</RawData.mx\>\""}], 
+    ",", "\"\<Global`\>\""}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.73140935984906*^9, 3.7314093952800603`*^9}, {
+  3.731596832454507*^9, 
+  3.7315968409671926`*^9}},ExpressionUUID->"28a61394-7aa8-40bd-9f77-\
+19d38d2bd937"]
+},
+WindowSize->{759, 835},
+WindowMargins->{{Automatic, 291}, {70, Automatic}},
+Magnification:>1.3 Inherited,
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (September 10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1309, 30, 138, "Input",ExpressionUUID->"2116326e-f3b9-43a4-b32a-1d53b4de349a"],
+Cell[1870, 52, 2208, 68, 338, "Input",ExpressionUUID->"84ce0173-a724-492a-b335-04f071ea229c"],
+Cell[CellGroupData[{
+Cell[4103, 124, 200, 4, 37, "Input",ExpressionUUID->"83ea26f9-5e57-40a1-96e4-cc6ee9f3f92c"],
+Cell[4306, 130, 330, 8, 42, "Output",ExpressionUUID->"dd27cd40-576b-4fb9-8977-9d1215946673"]
+}, Open  ]],
+Cell[4651, 141, 386, 10, 37, "Input",ExpressionUUID->"28a61394-7aa8-40bd-9f77-19d38d2bd937"]
+}
+]
+*)
+
