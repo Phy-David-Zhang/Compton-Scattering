@@ -10,14 +10,47 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     16748,        436]
-NotebookOptionsPosition[     14935,        402]
-NotebookOutlinePosition[     15531,        423]
-CellTagsIndexPosition[     15488,        420]
+NotebookDataLength[     24560,        644]
+NotebookOptionsPosition[     21029,        590]
+NotebookOutlinePosition[     21625,        611]
+CellTagsIndexPosition[     21582,        608]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
+Cell["Raw Data Processing", "Subsection",
+ CellChangeTimes->{{3.7316526787192774`*^9, 
+  3.7316526947797203`*^9}},ExpressionUUID->"27f1e90c-24d6-437a-ac80-\
+ce85a1971e49"],
+
+Cell["\<\
+This file is used to generate the cross section (without correction according \
+to the efficiency) from the raw data of particle events. \
+\>", "Text",
+ CellChangeTimes->{{3.7316527036263037`*^9, 
+  3.731652745688274*^9}},ExpressionUUID->"9e8a2551-844e-4764-959b-\
+f8276e8bb10f"],
+
+Cell["\<\
+    Copyright \[Copyright] 2018 Changkai Zhang
+    Contact: phy.zhangck@gmail.com
+    Licensed under GPL 3.0\
+\>", "Text",
+ CellChangeTimes->{{3.7316512313059464`*^9, 3.7316512693978095`*^9}, {
+  3.7316513358822455`*^9, 
+  3.731651413927269*^9}},ExpressionUUID->"75b8a726-4147-46e7-adfb-\
+65e647690d3c"],
+
+Cell["\<\
+First, read in the raw data from the RawData.mx. This should import  \
+RawDataSetAngle[\[Theta]] and PeakPosAng[\[Theta]].\
+\>", "Text",
+ CellChangeTimes->{{3.7316527782836432`*^9, 
+  3.7316528490092683`*^9}},ExpressionUUID->"c2bd10bf-3b4f-4a45-b607-\
+06d4d07929d1"],
+
 Cell[BoxData[
  RowBox[{"<<", 
   RowBox[{"(", 
@@ -29,6 +62,17 @@ Cell[BoxData[
   3.7315665793658667`*^9}, {3.731566628948799*^9, 
   3.7315666313121705`*^9}},ExpressionUUID->"0b90ad8f-238f-4047-b4ce-\
 ae3507c8e483"],
+
+Cell[TextData[{
+ "Extract the elapsed time of each detection. This is stored in the 10th line \
+in the raw data. Figure is stored in variable ",
+ StyleBox["ElapsedTime[\[Theta]]",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7316528615489893`*^9, 
+  3.731652984651864*^9}},ExpressionUUID->"cc48a3e0-0a33-4905-8a2c-\
+12c35402ec91"],
 
 Cell[BoxData[
  RowBox[{"Do", "[", 
@@ -52,6 +96,17 @@ Cell[BoxData[
  CellChangeTimes->{{3.7314096909350605`*^9, 
   3.7314097928170605`*^9}},ExpressionUUID->"93bb2437-39cc-41b4-8fa9-\
 f89db19cc33d"],
+
+Cell[TextData[{
+ "Extract the particle number spectrum in the peak, stored in ",
+ StyleBox["PeakData[\[Theta]]",
+  FontWeight->"Bold"],
+ ". Notice that the first 12 lines are not particle number data. "
+}], "Text",
+ CellChangeTimes->{{3.7316529385200267`*^9, 3.731652940440872*^9}, {
+  3.73165300536012*^9, 
+  3.731653100340123*^9}},ExpressionUUID->"266b8be2-0df0-4999-9684-\
+815826162b55"],
 
 Cell[BoxData[
  RowBox[{"Do", "[", 
@@ -90,6 +145,16 @@ Cell[BoxData[
   3.73141115461706*^9}},ExpressionUUID->"6fafca8d-8703-4c9e-babc-\
 6570287035d9"],
 
+Cell[TextData[{
+ "Extract the full spectrum for test purpose, stored in ",
+ StyleBox["AllData[\[Theta]]",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7316531230049076`*^9, 
+  3.7316531659519205`*^9}},ExpressionUUID->"5f951bc8-40ab-4f85-ac7b-\
+9449c4263a68"],
+
 Cell[BoxData[
  RowBox[{"Do", "[", 
   RowBox[{
@@ -115,6 +180,17 @@ Cell[BoxData[
   3.73141075947306*^9, 
   3.7314107763460603`*^9}},ExpressionUUID->"09d32a0a-8f60-4c43-90b0-\
 ba16c7d5edf6"],
+
+Cell[TextData[{
+ "Use channel as discrete variable, particle spectrum as weight, calculate \
+the mean and width (standard error) of the peak, stored in ",
+ StyleBox["PeakStats[\[Theta]]",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7316531938429956`*^9, 
+  3.7316532650527916`*^9}},ExpressionUUID->"f4ea2d7a-1257-440b-85c3-\
+df88e1db39dd"],
 
 Cell[BoxData[
  RowBox[{"Do", "[", 
@@ -144,6 +220,20 @@ Cell[BoxData[
   3.7315668320223727`*^9}},ExpressionUUID->"456bb9d6-7771-4f80-a45c-\
 2af812782946"],
 
+Cell[TextData[{
+ "Extract the mean (position) and standard error (half-width) from the \
+weighted data, stored in ",
+ StyleBox["PeakMean[\[Theta]]",
+  FontWeight->"Bold"],
+ " and ",
+ StyleBox["PeakStdErr[\[Theta]]",
+  FontWeight->"Bold"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.7316532915419254`*^9, 
+  3.731653348853716*^9}},ExpressionUUID->"1644f425-682b-4225-a401-\
+79047f2cd8bf"],
+
 Cell[BoxData[
  RowBox[{"Do", "[", 
   RowBox[{
@@ -169,6 +259,17 @@ Cell[BoxData[
   3.7315671519798164`*^9}},ExpressionUUID->"d3420c90-462c-429a-970e-\
 e6a08c188870"],
 
+Cell[TextData[{
+ "Generate a Gaussian distribution according to the mean and standard error, \
+named as ",
+ StyleBox["GaussianFit[\[Theta]]",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.73165341721551*^9, 
+  3.731653462587166*^9}},ExpressionUUID->"2b22a5ea-01f9-423c-9e4d-\
+ac6c5239b49e"],
+
 Cell[BoxData[
  RowBox[{"Do", "[", 
   RowBox[{
@@ -189,6 +290,30 @@ Cell[BoxData[
   3.7315673543376956`*^9, 3.7315673718156548`*^9}, {3.731567519935443*^9, 
   3.7315675654673667`*^9}},ExpressionUUID->"1890dbad-dc8b-4a9b-a7ad-\
 09e79c8ebeb2"],
+
+Cell[TextData[{
+ "Calculate the expected particle spectrum using the Gaussian fitting, stored \
+in ",
+ StyleBox["PeakFitted[\[Theta]]",
+  FontWeight->"Bold"],
+ ". This is regarded as the statistical model."
+}], "Text",
+ CellChangeTimes->{{3.73165359923454*^9, 
+  3.73165367622612*^9}},ExpressionUUID->"8b74e86a-001e-4e86-a7d6-\
+64d0c84cef02"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"Spectrum", "[", "Channel", "]"}], " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"No", ".", " ", "of"}], " ", 
+     RowBox[{"Particles", " ", "\[Cross]", " ", 
+      RowBox[{"Gaussian", "[", "Channel", "]"}]}]}], " ", "+", " ", 
+    "Constant"}]}], TraditionalForm]], "DisplayFormula",
+ CellChangeTimes->{{3.731653792682312*^9, 3.7316538828699265`*^9}},
+ TextAlignment->Center,ExpressionUUID->"8a941ccb-e50d-48db-a5a2-586689dd4d3d"],
 
 Cell[BoxData[
  RowBox[{"Do", "[", 
@@ -221,6 +346,18 @@ Cell[BoxData[
    3.7315694705846987`*^9}},ExpressionUUID->"d96c8776-45e8-422f-a406-\
 c918b1fb4992"],
 
+Cell[TextData[{
+ "The measured spectrum should be linearly dependent on the Gaussian fit. So \
+a linear model is established, stored in ",
+ StyleBox["PeakModels[\[Theta]]",
+  FontWeight->"Bold"],
+ ". The slope of this model will be the total number of particles in the peak."
+}], "Text",
+ CellChangeTimes->{{3.7316536976860523`*^9, 3.731653736593794*^9}, {
+  3.7316539570459256`*^9, 
+  3.731654029250845*^9}},ExpressionUUID->"e9ecb008-926a-43ae-adf7-\
+68fe94c21b06"],
+
 Cell[BoxData[
  RowBox[{"Do", "[", 
   RowBox[{
@@ -244,6 +381,20 @@ Cell[BoxData[
  CellChangeTimes->{{3.7315820421986046`*^9, 
   3.7315820917587423`*^9}},ExpressionUUID->"22467b98-a9fc-42d0-ac50-\
 f4ce04ab325f"],
+
+Cell[TextData[{
+ "The slope is the second parameter of the model. Only the number of \
+particles at the center of the peak is considered. Therefore, the slope (and \
+its error) is multiplied by the maximum value of the Gaussian fit. Data are \
+stored in ",
+ StyleBox["Particles[\[Theta]]",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.731653992786629*^9, 3.7316540040445004`*^9}, {
+  3.7316540368898106`*^9, 
+  3.731654169519302*^9}},ExpressionUUID->"9fd459cc-8c15-4345-a105-\
+7f0cb2f07bb5"],
 
 Cell[BoxData[
  RowBox[{"Do", "[", 
@@ -287,6 +438,16 @@ Cell[BoxData[
    3.7315848651130257`*^9}},ExpressionUUID->"70c8ffd9-14df-420d-b777-\
 72c394be8ae4"],
 
+Cell[TextData[{
+ "Calculate the rate of the event, stored in ",
+ StyleBox["Rate[\[Theta]]",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7316541992737226`*^9, 
+  3.7316542204245043`*^9}},ExpressionUUID->"519a5b49-ed0c-441a-910f-\
+4e87860efe24"],
+
 Cell[BoxData[
  RowBox[{"Do", "[", 
   RowBox[{
@@ -307,6 +468,14 @@ Cell[BoxData[
    3.7315847998689127`*^9, 3.7315848389216394`*^9}, 
    3.731605721037318*^9},ExpressionUUID->"530ac49e-39e7-4a44-afa9-\
 1815a77888dd"],
+
+Cell["\<\
+Print the rate. These are the final data that will be corrected and compared \
+with the theoretical results.\
+\>", "Text",
+ CellChangeTimes->{{3.7316542364262924`*^9, 
+  3.7316542796072598`*^9}},ExpressionUUID->"aa952749-8c29-4257-adbe-\
+c43d22cb7425"],
 
 Cell[CellGroupData[{
 
@@ -388,6 +557,16 @@ Cell[BoxData[
 e813f2ec4245"]
 }, Open  ]],
 
+Cell[TextData[{
+ "Save the processed data in file ",
+ StyleBox["Processed.mx",
+  FontWeight->"Bold"],
+ " under the same directory."
+}], "Text",
+ CellChangeTimes->{{3.7316542960199966`*^9, 
+  3.731654334296755*^9}},ExpressionUUID->"77b1153a-7af6-4afa-838d-\
+519092e95c78"],
+
 Cell[BoxData[
  RowBox[{
   RowBox[{"DumpSave", "[", 
@@ -398,7 +577,16 @@ Cell[BoxData[
  CellChangeTimes->{{3.7315974097247257`*^9, 3.731597423550891*^9}, {
   3.7315974632772236`*^9, 
   3.7315974999849586`*^9}},ExpressionUUID->"92b0e909-ec19-4403-818d-\
-b92450c8a53a"]
+b92450c8a53a"],
+
+Cell["\<\
+This is the end of file Process.nb. Current version : release-0.0.1.0. \
+Started March 31, 2018. Finished April 1, 2018. Last Revised April 2, 2018.\
+\>", "Text",
+ CellChangeTimes->{{3.7316543649452796`*^9, 
+  3.7316544048769503`*^9}},ExpressionUUID->"d9bf4f1a-d7c9-43ae-8c72-\
+e91ff99ff6cb"]
+}, Open  ]]
 },
 WindowSize->{759, 835},
 WindowMargins->{{Automatic, 473}, {57, Automatic}},
@@ -422,22 +610,42 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 430, 10, 37, "Input",ExpressionUUID->"0b90ad8f-238f-4047-b4ce-ae3507c8e483"],
-Cell[991, 32, 777, 21, 88, "Input",ExpressionUUID->"93bb2437-39cc-41b4-8fa9-f89db19cc33d"],
-Cell[1771, 55, 1359, 35, 113, "Input",ExpressionUUID->"6fafca8d-8703-4c9e-babc-6570287035d9"],
-Cell[3133, 92, 891, 24, 88, "Input",ExpressionUUID->"09d32a0a-8f60-4c43-90b0-ba16c7d5edf6"],
-Cell[4027, 118, 1009, 26, 113, "Input",ExpressionUUID->"456bb9d6-7771-4f80-a45c-2af812782946"],
-Cell[5039, 146, 866, 23, 88, "Input",ExpressionUUID->"d3420c90-462c-429a-970e-e6a08c188870"],
-Cell[5908, 171, 787, 19, 88, "Input",ExpressionUUID->"1890dbad-dc8b-4a9b-a7ad-09e79c8ebeb2"],
-Cell[6698, 192, 1231, 29, 113, "Input",ExpressionUUID->"d96c8776-45e8-422f-a406-c918b1fb4992"],
-Cell[7932, 223, 803, 22, 88, "Input",ExpressionUUID->"22467b98-a9fc-42d0-ac50-f4ce04ab325f"],
-Cell[8738, 247, 1668, 40, 163, "Input",ExpressionUUID->"70c8ffd9-14df-420d-b777-72c394be8ae4"],
-Cell[10409, 289, 782, 19, 63, "Input",ExpressionUUID->"530ac49e-39e7-4a44-afa9-1815a77888dd"],
 Cell[CellGroupData[{
-Cell[11216, 312, 458, 11, 37, "Input",ExpressionUUID->"5f9c444d-14c1-493b-8c86-42e937b6da27"],
-Cell[11677, 325, 2848, 62, 283, "Output",ExpressionUUID->"411dd8ac-2a46-4dd6-96bc-e813f2ec4245"]
+Cell[580, 22, 171, 3, 69, "Subsection",ExpressionUUID->"27f1e90c-24d6-437a-ac80-ce85a1971e49"],
+Cell[754, 27, 289, 6, 73, "Text",ExpressionUUID->"9e8a2551-844e-4764-959b-f8276e8bb10f"],
+Cell[1046, 35, 313, 8, 102, "Text",ExpressionUUID->"75b8a726-4147-46e7-adfb-65e647690d3c"],
+Cell[1362, 45, 276, 6, 73, "Text",ExpressionUUID->"c2bd10bf-3b4f-4a45-b607-06d4d07929d1"],
+Cell[1641, 53, 430, 10, 37, "Input",ExpressionUUID->"0b90ad8f-238f-4047-b4ce-ae3507c8e483"],
+Cell[2074, 65, 347, 9, 73, "Text",ExpressionUUID->"cc48a3e0-0a33-4905-8a2c-12c35402ec91"],
+Cell[2424, 76, 777, 21, 88, "Input",ExpressionUUID->"93bb2437-39cc-41b4-8fa9-f89db19cc33d"],
+Cell[3204, 99, 390, 9, 73, "Text",ExpressionUUID->"266b8be2-0df0-4999-9684-815826162b55"],
+Cell[3597, 110, 1359, 35, 113, "Input",ExpressionUUID->"6fafca8d-8703-4c9e-babc-6570287035d9"],
+Cell[4959, 147, 275, 8, 44, "Text",ExpressionUUID->"5f951bc8-40ab-4f85-ac7b-9449c4263a68"],
+Cell[5237, 157, 891, 24, 88, "Input",ExpressionUUID->"09d32a0a-8f60-4c43-90b0-ba16c7d5edf6"],
+Cell[6131, 183, 357, 9, 73, "Text",ExpressionUUID->"f4ea2d7a-1257-440b-85c3-df88e1db39dd"],
+Cell[6491, 194, 1009, 26, 113, "Input",ExpressionUUID->"456bb9d6-7771-4f80-a45c-2af812782946"],
+Cell[7503, 222, 384, 12, 73, "Text",ExpressionUUID->"1644f425-682b-4225-a401-79047f2cd8bf"],
+Cell[7890, 236, 866, 23, 88, "Input",ExpressionUUID->"d3420c90-462c-429a-970e-e6a08c188870"],
+Cell[8759, 261, 306, 9, 73, "Text",ExpressionUUID->"2b22a5ea-01f9-423c-9e4d-ac6c5239b49e"],
+Cell[9068, 272, 787, 19, 88, "Input",ExpressionUUID->"1890dbad-dc8b-4a9b-a7ad-09e79c8ebeb2"],
+Cell[9858, 293, 342, 9, 73, "Text",ExpressionUUID->"8b74e86a-001e-4e86-a7d6-64d0c84cef02"],
+Cell[10203, 304, 486, 11, 33, "DisplayFormula",ExpressionUUID->"8a941ccb-e50d-48db-a5a2-586689dd4d3d"],
+Cell[10692, 317, 1231, 29, 113, "Input",ExpressionUUID->"d96c8776-45e8-422f-a406-c918b1fb4992"],
+Cell[11926, 348, 466, 10, 102, "Text",ExpressionUUID->"e9ecb008-926a-43ae-adf7-68fe94c21b06"],
+Cell[12395, 360, 803, 22, 88, "Input",ExpressionUUID->"22467b98-a9fc-42d0-ac50-f4ce04ab325f"],
+Cell[13201, 384, 508, 12, 131, "Text",ExpressionUUID->"9fd459cc-8c15-4345-a105-7f0cb2f07bb5"],
+Cell[13712, 398, 1668, 40, 163, "Input",ExpressionUUID->"70c8ffd9-14df-420d-b777-72c394be8ae4"],
+Cell[15383, 440, 261, 8, 44, "Text",ExpressionUUID->"519a5b49-ed0c-441a-910f-4e87860efe24"],
+Cell[15647, 450, 782, 19, 63, "Input",ExpressionUUID->"530ac49e-39e7-4a44-afa9-1815a77888dd"],
+Cell[16432, 471, 262, 6, 73, "Text",ExpressionUUID->"aa952749-8c29-4257-adbe-c43d22cb7425"],
+Cell[CellGroupData[{
+Cell[16719, 481, 458, 11, 37, "Input",ExpressionUUID->"5f9c444d-14c1-493b-8c86-42e937b6da27"],
+Cell[17180, 494, 2848, 62, 283, "Output",ExpressionUUID->"411dd8ac-2a46-4dd6-96bc-e813f2ec4245"]
 }, Open  ]],
-Cell[14540, 390, 391, 10, 37, "Input",ExpressionUUID->"92b0e909-ec19-4403-818d-b92450c8a53a"]
+Cell[20043, 559, 271, 8, 44, "Text",ExpressionUUID->"77b1153a-7af6-4afa-838d-519092e95c78"],
+Cell[20317, 569, 391, 10, 37, "Input",ExpressionUUID->"92b0e909-ec19-4403-818d-b92450c8a53a"],
+Cell[20711, 581, 302, 6, 73, "Text",ExpressionUUID->"d9bf4f1a-d7c9-43ae-8c72-e91ff99ff6cb"]
+}, Open  ]]
 }
 ]
 *)
